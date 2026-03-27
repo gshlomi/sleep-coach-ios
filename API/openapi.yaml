@@ -1,0 +1,591 @@
+openapi: 3.0.3
+info:
+  title: Sleep Coach API
+  description: |
+    Backend API for Sleep Coach iOS app.
+    Provides user authentication, sleep logging, pattern analysis, and personalized insights.
+  version: 1.0.0
+  contact:
+    name: Sleep Coach Team
+    email: support@sleepcoach.app
+
+servers:
+  - url: http://localhost:3000
+    description: Development server
+  - url: https://api.sleepcoach.app
+    description: Production server
+
+tags:
+  - name: Users
+    description: User authentication and profile management
+  - name: Sleep
+    description: Sleep logging and retrieval
+  - name: Insights
+    description: Sleep analysis and recommendations
+
+paths:
+  /api/users/register:
+    post:
+      tags: [Users]
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Invalid request data
+        '409':
+          description: User already exists
+
+  /api/users/login:
+    post:
+      tags: [Users]
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+
+  /api/users/profile:
+    get:
+      tags: [Users]
+      summary: Get current user profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Profile retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '401':
+          description: Unauthorized
+
+    put:
+      tags: [Users]
+      summary: Update user profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProfileRequest'
+      responses:
+        '200':
+          description: Profile updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+
+  /api/sleep/logs:
+    get:
+      tags: [Sleep]
+      summary: Get user's sleep logs
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 30
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Sleep logs retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SleepLogsResponse'
+
+    post:
+      tags: [Sleep]
+      summary: Submit a new sleep log
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSleepLogRequest'
+      responses:
+        '201':
+          description: Sleep log created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SleepLogResponse'
+
+  /api/sleep/logs/{id}:
+    get:
+      tags: [Sleep]
+      summary: Get a specific sleep log
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sleep log retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SleepLogResponse'
+        '404':
+          description: Not found
+
+    put:
+      tags: [Sleep]
+      summary: Update a sleep log
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSleepLogRequest'
+      responses:
+        '200':
+          description: Sleep log updated
+
+    delete:
+      tags: [Sleep]
+      summary: Delete a sleep log
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sleep log deleted
+
+  /api/sleep/tasks/complete:
+    post:
+      tags: [Sleep]
+      summary: Record pre-sleep task completion
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [taskType]
+              properties:
+                taskType:
+                  type: string
+                  enum: [screen_shutdown, wind_down, worry_list, breathing, cognitive_shuffle]
+                sleepLogId:
+                  type: string
+      responses:
+        '201':
+          description: Task completion recorded
+
+  /api/insights/weekly:
+    get:
+      tags: [Insights]
+      summary: Get weekly sleep analysis
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Weekly analysis retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeeklyInsightsResponse'
+
+  /api/insights/monthly:
+    get:
+      tags: [Insights]
+      summary: Get monthly sleep analysis
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Monthly analysis retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyInsightsResponse'
+
+  /api/insights/recommendations:
+    get:
+      tags: [Insights]
+      summary: Get personalized recommendations
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Recommendations retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationsResponse'
+
+  /api/insights/summary:
+    get:
+      tags: [Insights]
+      summary: Get dashboard summary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Summary retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SummaryResponse'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 6
+        name:
+          type: string
+        plannedBedtime:
+          type: string
+          example: "23:00"
+        plannedWakeTime:
+          type: string
+          example: "07:00"
+        sleepGoalHours:
+          type: number
+          default: 8
+        timezone:
+          type: string
+          default: "Asia/Jerusalem"
+        language:
+          type: string
+          enum: [he, en]
+          default: he
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    AuthResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        user:
+          $ref: '#/components/schemas/UserProfile'
+        token:
+          type: string
+
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        plannedBedtime:
+          type: string
+        plannedWakeTime:
+          type: string
+        sleepGoalHours:
+          type: number
+        timezone:
+          type: string
+        language:
+          type: string
+
+    UpdateProfileRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        plannedBedtime:
+          type: string
+        plannedWakeTime:
+          type: string
+        sleepGoalHours:
+          type: number
+        timezone:
+          type: string
+        language:
+          type: string
+
+    CreateSleepLogRequest:
+      type: object
+      required: [bedtime, wakeTime]
+      properties:
+        bedtime:
+          type: string
+          format: date-time
+        wakeTime:
+          type: string
+          format: date-time
+        sleepQuality:
+          type: integer
+          minimum: 1
+          maximum: 5
+        notes:
+          type: string
+        preSleepTasksCompleted:
+          type: array
+          items:
+            type: string
+        healthkitSynced:
+          type: boolean
+
+    UpdateSleepLogRequest:
+      type: object
+      properties:
+        bedtime:
+          type: string
+          format: date-time
+        wakeTime:
+          type: string
+          format: date-time
+        sleepQuality:
+          type: integer
+          minimum: 1
+          maximum: 5
+        notes:
+          type: string
+
+    SleepLog:
+      type: object
+      properties:
+        id:
+          type: string
+        bedtime:
+          type: string
+          format: date-time
+        wakeTime:
+          type: string
+          format: date-time
+        sleepDurationMinutes:
+          type: integer
+        sleepDurationHours:
+          type: number
+        sleepQuality:
+          type: integer
+        notes:
+          type: string
+        preSleepTasksCompleted:
+          type: array
+          items:
+            type: string
+        healthkitSynced:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+
+    SleepLogsResponse:
+      type: object
+      properties:
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SleepLog'
+        pagination:
+          type: object
+          properties:
+            total:
+              type: integer
+            limit:
+              type: integer
+            offset:
+              type: integer
+            hasMore:
+              type: boolean
+
+    SleepLogResponse:
+      type: object
+      properties:
+        log:
+          $ref: '#/components/schemas/SleepLog'
+
+    WeeklyInsightsResponse:
+      type: object
+      properties:
+        period:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        logsCount:
+          type: integer
+        analysis:
+          $ref: '#/components/schemas/Analysis'
+
+    MonthlyInsightsResponse:
+      allOf:
+        - $ref: '#/components/schemas/WeeklyInsightsResponse'
+        - type: object
+          properties:
+            period:
+              type: string
+              enum: [monthly]
+
+    Analysis:
+      type: object
+      properties:
+        hasData:
+          type: boolean
+        statistics:
+          type: object
+          properties:
+            averageDurationMinutes:
+              type: integer
+            averageDurationHours:
+              type: number
+            averageQuality:
+              type: number
+            minDurationMinutes:
+              type: integer
+            maxDurationMinutes:
+              type: integer
+            standardDeviationMinutes:
+              type: integer
+            totalLogs:
+              type: integer
+        consistencyScore:
+          type: integer
+        dayOfWeekAnalysis:
+          type: object
+        taskEffectiveness:
+          type: object
+        qualityTrend:
+          type: object
+        bestWorstDays:
+          type: object
+        goalAchievement:
+          type: object
+
+    Recommendation:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [info, warning, recommendation, positive, concern]
+        priority:
+          type: string
+          enum: [high, medium, low]
+        title:
+          type: string
+        titleHe:
+          type: string
+        description:
+          type: string
+        descriptionHe:
+          type: string
+        action:
+          type: string
+
+    RecommendationsResponse:
+      type: object
+      properties:
+        recommendations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recommendation'
+        generatedAt:
+          type: string
+          format: date-time
+
+    SummaryResponse:
+      type: object
+      properties:
+        summary:
+          type: object
+          properties:
+            streak:
+              type: integer
+            weeklyAverage:
+              type: object
+            monthlyLogs:
+              type: integer
+            weeklyLogs:
+              type: integer
+            consistencyScore:
+              type: integer
+            sleepGoalHours:
+              type: number
+            goalAchievementRate:
+              type: integer

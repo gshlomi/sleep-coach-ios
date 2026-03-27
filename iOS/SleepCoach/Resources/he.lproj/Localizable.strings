@@ -1,0 +1,146 @@
+/* Sleep Coach Localizable Strings - Hebrew */
+
+"App Name" = "מאמן שינה";
+
+"Dashboard" = "לוח בקרה";
+"Log Sleep" = "תעד שינה";
+"Analytics" = "ניתוח";
+"Insights" = "תובנות";
+"Settings" = "הגדרות";
+
+/* Onboarding */
+"Welcome to" = "ברוכים הבאים אל";
+"Create Account" = "צור חשבון";
+"Create account subtitle" = "צור חשבון כדי לסנכרן את נתוני השינה שלך";
+"Sleep Schedule" = "לוח זמנים";
+"Sleep schedule subtitle" = "קבע את שעות השינה וההתעוררות האידיאליות שלך";
+"Sleep Goal" = "יעד שינה";
+"Sleep goal subtitle" = "כמה שעות שינה אתה רוצה?";
+"hours per night" = "שעות בלילה";
+"You'll receive reminders" = "תקבל תזכורות";
+"Pre-sleep tasks to improve quality" = "משימות לפני השינה לשיפור האיכות";
+"Personalized insights" = "תובנות מותאמות אישית";
+"Get Started" = "התחל";
+"Next" = "הבא";
+"Back" = "חזור";
+"Name (optional)" = "שם (אופציונלי)";
+"Email" = "אימייל";
+"Password" = "סיסמה";
+
+/* Dashboard */
+"Sleep Score" = "ציון שינה";
+"Duration" = "משך";
+"Quality" = "איכות";
+"Day Streak" = "רצף ימים";
+"Goal Met" = "יעד הושג";
+"This Week" = "השבוע";
+"Upcoming Reminders" = "תזכורות קרובות";
+"See All" = "ראה הכל";
+"Recent Sleep" = "שינה אחרונה";
+"No sleep logs yet" = "אין עדיין יומני שינה";
+"Start tracking your sleep" = "התחל לעקוב אחר השינה שלך";
+"This Week" = "השבוע";
+
+/* Sleep Log */
+"Import from Health" = "ייבוא מבריאות";
+"Import from Health description" = "ייבא נתוני שינה מאפל וואטץ";
+"Log Manually" = "הזן ידנית";
+"Log manually description" = "הזן את נתוני השינה שלך ידנית";
+"Recent Logs" = "יומנים אחרונים";
+"Sleep Calendar" = "לוח שינה";
+"Bedtime" = "שעת שינה";
+"Wake Time" = "שעת התעוררות";
+"How did you sleep?" = "איך ישנת?";
+"Pre-Sleep Tasks" = "משימות לפני השינה";
+"Pre-sleep tasks footer" = "סמן את המשימות שהשלמת הלילה";
+"Notes" = "הערות";
+"Notes footer" = "מה עזר או הפריע לשינה שלך?";
+"Save" = "שמור";
+"Cancel" = "ביטול";
+"Delete" = "מחק";
+
+/* Analytics */
+"Period" = "תקופה";
+"Weekly" = "שבועי";
+"Monthly" = "חודשי";
+"Sleep Duration" = "משך השינה";
+"Goal:" = "יעד:";
+"hours" = "שעות";
+"Quality Trend" = "מגמת איכות";
+"Excellent" = "מצוין";
+"Average" = "ממוצע";
+"Poor" = "גרוע";
+"By Day of Week" = "לפי יום בשבוע";
+"Best:" = "הכי טוב:";
+"Worst:" = "הכי גרוע:";
+"Statistics" = "סטטיסטיקות";
+"Average" = "ממוצע";
+"Average Quality" = "איכות ממוצעת";
+"Consistency" = "עקביות";
+"Task Effectiveness" = "יעילות משימות";
+"Task effectiveness description" = "כיצד משימות לפני השינה משפיעות על השינה שלך";
+
+/* Insights */
+"Personalized Insights" = "תובנות מותאמות אישית";
+"Insights subtitle" = "בהתבסס על דפוסי השינה שלך";
+"Analyzing your sleep..." = "מנתח את השינה שלך...";
+"No insights yet" = "אין עדיין תובנות";
+"No insights description" = "תעד יותר שינה כדי לקבל המלצות מותאמות אישית";
+"Take Action" = "בצע פעולה";
+"Quick Tips" = "טיפים מהירים";
+"Consistent schedule" = "לוח זמנים עקבי";
+"Tip 1 description" = "לך לישון והתעורר באותה שעה כל יום";
+"Screen-free hour" = "שעה ללא מסכים";
+"Tip 2 description" = "הימנע ממסכים שעה לפני השינה";
+"Cool room" = "חדר קריר";
+"Tip 3 description" = "שמור על חדר השינה שלך בטמפרטורה 18-20 מעלות";
+"Limit caffeine" = "הגבל קפאין";
+"Tip 4 description" = "הימנע מקפאין אחרי 14:00";
+
+/* Settings */
+"Sleep Schedule" = "לוח זמנים";
+"Planned Bedtime" = "שעת שינה מתוכננת";
+"Planned Wake Time" = "שעת התעוררות מתוכננת";
+"Sleep Goal" = "יעד שינה";
+"hours" = "שעות";
+"Notifications" = "התראות";
+"Enable Reminders" = "הפעל תזכורות";
+"Notifications footer" = "קבל תזכורות לשגרת הקינון שלך";
+"Language" = "שפה";
+"Account" = "חשבון";
+"Logout" = "התנתק";
+"Logout Alert" = "התנתקות";
+"Logout confirmation" = "האם אתה בטוח שאתה רוצה להתנתק?";
+"About" = "אודות";
+"Version" = "גרסה";
+
+/* Pre-Sleep Tasks */
+"Screen Shutdown" = "כיבוי מסכים";
+"Wind Down" = "שגרת הרגעה";
+"Worry List" = "רשימת דאגות";
+"Breathing Exercise" = "תרגיל נשימה";
+"Cognitive Shuffle" = "ערבוב קוגניטיבי";
+"Stop using screens 2 hours before bed" = "הפסק להשתמש במסכים שעתיים לפני השינה";
+"Begin your relaxing bedtime routine" = "התחל את שגרת הקינון הרגועה שלך";
+"Write down tomorrow's worries" = "רשום את הדאגות של מחר";
+"Practice 4-7-8 breathing technique" = "תרגל טכניקת נשימה 4-7-8";
+"Shuffle words to quiet your mind" = "ערבב מילים כדי להרגיע את המחשבות";
+
+/* Notifications */
+"Screen Shutdown Reminder" = "תזכורת לכיבוי מסכים";
+"Wind Down Time" = "זמן להרגעה";
+"Worry List Time" = "זמן לרשימת דאגות";
+"Breathing Exercise" = "תרגיל נשימה";
+"Bedtime - Cognitive Shuffle" = "שינה - ערבוב קוגניטיבי";
+"Time to put away screens for better sleep" = "הגיע הזמן להניח את המסכים לשינה טובה יותר";
+"Start your relaxing bedtime routine" = "התחל את שגרת הקינון הרגועה שלך";
+"Write down tomorrow's worries to clear your mind" = "רשום את הדאגות של מחר כדי לרוקן את הראש";
+"Practice the 4-7-8 breathing technique for relaxation" = "תרגל את טכניקת הנשימה 4-7-8 להרפיה";
+"Time for cognitive shuffling to help you fall asleep" = "זמן לערבוב קוגניטיבי כדי לעזור לך להירדם";
+
+/* Errors */
+"Error" = "שגיאה";
+"Loading..." = "טוען...";
+"No Health Data" = "אין נתוני בריאות";
+"No sleep data found in Health app" = "לא נמצאו נתוני שינה באפליקציית בריאות";
+"Import" = "ייבא";

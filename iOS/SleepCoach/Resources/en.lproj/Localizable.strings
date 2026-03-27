@@ -1,0 +1,146 @@
+/* Sleep Coach Localizable Strings - English */
+
+"App Name" = "Sleep Coach";
+
+"Dashboard" = "Dashboard";
+"Log Sleep" = "Log Sleep";
+"Analytics" = "Analytics";
+"Insights" = "Insights";
+"Settings" = "Settings";
+
+/* Onboarding */
+"Welcome to" = "Welcome to";
+"Create Account" = "Create Account";
+"Create account subtitle" = "Create an account to sync your sleep data";
+"Sleep Schedule" = "Sleep Schedule";
+"Sleep schedule subtitle" = "Set your ideal sleep and wake times";
+"Sleep Goal" = "Sleep Goal";
+"Sleep goal subtitle" = "How many hours of sleep do you want?";
+"hours per night" = "hours per night";
+"You'll receive reminders" = "You'll receive reminders";
+"Pre-sleep tasks to improve quality" = "Pre-sleep tasks to improve quality";
+"Personalized insights" = "Personalized insights";
+"Get Started" = "Get Started";
+"Next" = "Next";
+"Back" = "Back";
+"Name (optional)" = "Name (optional)";
+"Email" = "Email";
+"Password" = "Password";
+
+/* Dashboard */
+"Sleep Score" = "Sleep Score";
+"Duration" = "Duration";
+"Quality" = "Quality";
+"Day Streak" = "Day Streak";
+"Goal Met" = "Goal Met";
+"This Week" = "This Week";
+"Upcoming Reminders" = "Upcoming Reminders";
+"See All" = "See All";
+"Recent Sleep" = "Recent Sleep";
+"No sleep logs yet" = "No sleep logs yet";
+"Start tracking your sleep" = "Start tracking your sleep to see your progress";
+"This Week" = "This Week";
+
+/* Sleep Log */
+"Import from Health" = "Import from Health";
+"Import from Health description" = "Import sleep data from Apple Health";
+"Log Manually" = "Log Manually";
+"Log manually description" = "Enter your sleep data manually";
+"Recent Logs" = "Recent Logs";
+"Sleep Calendar" = "Sleep Calendar";
+"Bedtime" = "Bedtime";
+"Wake Time" = "Wake Time";
+"How did you sleep?" = "How did you sleep?";
+"Pre-Sleep Tasks" = "Pre-Sleep Tasks";
+"Pre-sleep tasks footer" = "Mark the tasks you completed tonight";
+"Notes" = "Notes";
+"Notes footer" = "What helped or hurt your sleep?";
+"Save" = "Save";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+
+/* Analytics */
+"Period" = "Period";
+"Weekly" = "Weekly";
+"Monthly" = "Monthly";
+"Sleep Duration" = "Sleep Duration";
+"Goal:" = "Goal:";
+"hours" = "hours";
+"Quality Trend" = "Quality Trend";
+"Excellent" = "Excellent";
+"Average" = "Average";
+"Poor" = "Poor";
+"By Day of Week" = "By Day of Week";
+"Best:" = "Best:";
+"Worst:" = "Worst:";
+"Statistics" = "Statistics";
+"Average" = "Average";
+"Average Quality" = "Average Quality";
+"Consistency" = "Consistency";
+"Task Effectiveness" = "Task Effectiveness";
+"Task effectiveness description" = "How your pre-sleep tasks affect your sleep";
+
+/* Insights */
+"Personalized Insights" = "Personalized Insights";
+"Insights subtitle" = "Based on your sleep patterns";
+"Analyzing your sleep..." = "Analyzing your sleep...";
+"No insights yet" = "No insights yet";
+"No insights description" = "Log more sleep to receive personalized recommendations";
+"Take Action" = "Take Action";
+"Quick Tips" = "Quick Tips";
+"Consistent schedule" = "Consistent schedule";
+"Tip 1 description" = "Go to bed and wake up at the same time every day";
+"Screen-free hour" = "Screen-free hour";
+"Tip 2 description" = "Avoid screens 1 hour before bedtime";
+"Cool room" = "Cool room";
+"Tip 3 description" = "Keep your bedroom at 65-68°F (18-20°C)";
+"Limit caffeine" = "Limit caffeine";
+"Tip 4 description" = "Avoid caffeine after 2 PM";
+
+/* Settings */
+"Sleep Schedule" = "Sleep Schedule";
+"Planned Bedtime" = "Planned Bedtime";
+"Planned Wake Time" = "Planned Wake Time";
+"Sleep Goal" = "Sleep Goal";
+"hours" = "hours";
+"Notifications" = "Notifications";
+"Enable Reminders" = "Enable Reminders";
+"Notifications footer" = "Receive reminders for your pre-sleep routine";
+"Language" = "Language";
+"Account" = "Account";
+"Logout" = "Logout";
+"Logout Alert" = "Logout Alert";
+"Logout confirmation" = "Are you sure you want to logout?";
+"About" = "About";
+"Version" = "Version";
+
+/* Pre-Sleep Tasks */
+"Screen Shutdown" = "Screen Shutdown";
+"Wind Down" = "Wind Down";
+"Worry List" = "Worry List";
+"Breathing Exercise" = "Breathing Exercise";
+"Cognitive Shuffle" = "Cognitive Shuffle";
+"Stop using screens 2 hours before bed" = "Stop using screens 2 hours before bed";
+"Begin your relaxing bedtime routine" = "Begin your relaxing bedtime routine";
+"Write down tomorrow's worries" = "Write down tomorrow's worries";
+"Practice 4-7-8 breathing technique" = "Practice 4-7-8 breathing technique";
+"Shuffle words to quiet your mind" = "Shuffle words to quiet your mind";
+
+/* Notifications */
+"Screen Shutdown Reminder" = "Screen Shutdown Reminder";
+"Wind Down Time" = "Wind Down Time";
+"Worry List Time" = "Worry List Time";
+"Breathing Exercise" = "Breathing Exercise";
+"Bedtime - Cognitive Shuffle" = "Bedtime - Cognitive Shuffle";
+"Time to put away screens for better sleep" = "Time to put away screens for better sleep";
+"Start your relaxing bedtime routine" = "Start your relaxing bedtime routine";
+"Write down tomorrow's worries to clear your mind" = "Write down tomorrow's worries to clear your mind";
+"Practice the 4-7-8 breathing technique for relaxation" = "Practice the 4-7-8 breathing technique for relaxation";
+"Time for cognitive shuffling to help you fall asleep" = "Time for cognitive shuffling to help you fall asleep";
+
+/* Errors */
+"Error" = "Error";
+"Loading..." = "Loading...";
+"No Health Data" = "No Health Data";
+"No sleep data found in Health app" = "No sleep data found in Health app";
+"Import" = "Import";
